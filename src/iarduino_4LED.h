@@ -5,7 +5,7 @@
 //  Библиотека является собственностью интернет магазина iarduino.ru и может свободно использоваться и распространяться!
 //  При публикации устройств или скетчей с использованием данной библиотеки, как целиком, так и её частей,
 //  в том числе и в некоммерческих целях, просим Вас опубликовать ссылку: http://iarduino.ru
-//  Автор библиотеки: Панькин Павел
+//  Автор библиотеки: Панькин Павел sajaem@narod.ru
 //  Если у Вас возникли технические вопросы, напишите нам: shop@iarduino.ru
 
 #ifndef iarduino_4LED_h
@@ -37,8 +37,8 @@ class iarduino_4LED{
 
 	public:			iarduino_4LED(uint8_t,uint8_t);											//	подключение индикатора (CLK,DIO);
 	/**	функции доступные пользователю **/
-		void		begin(){FUN_printNumS(""); light(5);}									//	инициализация индикатора
-		void		clear(){FUN_printNumS("");}												//	очистка всех разрядов
+		void		begin(){FUN_printNumS((const char*) ""); light(5);}					//	инициализация индикатора
+		void		clear(){FUN_printNumS((const char*) "");}							//	очистка всех разрядов
 		void		light(    uint8_t i){LED_uintLIGHT=i; FUN_dispDATA();}					//	установка яркости от 0 до 7
 		void		point(    uint8_t=255,bool=0);											//	установка точек
 		void		setLED(   uint8_t=0,uint8_t=0,uint8_t=0,uint8_t=0,bool=0);				//	установка светодиодов по битам
@@ -93,7 +93,7 @@ class iarduino_4LED{
 		bool		FUN_busRACK		();							//	ожидание одного ответного бита ACK
 		void		FUN_printNumI	(int16_t);					//	вывод целого числа
 		void		FUN_printNumF	(double);					//	вывод числа с плавающей точкой
-		void		FUN_printNumS	(char*);					//	вывод строки
+		void		FUN_printNumS	(const char*);				//	вывод строки
 		void		FUN_printNumA	(int i[]);					//	вывод массива
 		void		FUN_printNumT	(uint8_t,uint8_t);			//	вывод времени
 		void		FUN_sortStyle	(char,uint8_t,uint8_t,uint8_t,uint8_t,uint8_t);	//	сортировка параметров вывода

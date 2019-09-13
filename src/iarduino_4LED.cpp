@@ -275,7 +275,7 @@ void	iarduino_4LED::FUN_printNumT(uint8_t i, uint8_t j){
 }
 
 //		вывод строки
-void	iarduino_4LED::FUN_printNumS(char *i){
+void	iarduino_4LED::FUN_printNumS(const char *i){
 			uint8_t f=0;
 			VAR_massCH[0]=0;
 			for(uint8_t j=0, k=1; j<10; j++, k++){
